@@ -33,9 +33,6 @@ export default {
     return {
       title: this.story.name + " — Unspoken Agreement"
     }
-  },
-  mounted() {
-    console.log("PROJECT INDEX", this.story)
   }
 }
 </script>
