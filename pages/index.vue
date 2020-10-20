@@ -1,5 +1,6 @@
 <template>
   <div v-editable="story.content" class="page-Index">
+    <h1>INDEX</h1>
     <component
       :is="story.content.component | dashify"
       v-if="story.content.component"
@@ -43,13 +44,13 @@ export default {
       story: { content: {} }
     }
   },
-  mounted() {
-    console.log("INDEX", this.story)
-  },
   head() {
     return {
       title: this.story.name + " — Unspoken Agreement"
     }
+  },
+  mounted() {
+    console.log("INDEX", this.story)
   }
 }
 </script>

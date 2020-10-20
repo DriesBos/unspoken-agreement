@@ -1,5 +1,6 @@
 <template>
-  <div v-editable="story.content" class="page-Blog">
+  <div v-editable="story.content" class="page-ProjectIndex">
+    <h1>PROJECT INDEX</h1>
     <component
       :is="story.content.component | dashify"
       v-if="story.content.component"
@@ -31,13 +32,13 @@ export default {
       story: { content: {} }
     }
   },
-  mounted() {
-    console.log("PROJECT INDEX", this.story)
-  },
   head() {
     return {
       title: this.story.name + " — Unspoken Agreement"
     }
+  },
+  mounted() {
+    console.log("PROJECT INDEX", this.story)
   }
 }
 </script>

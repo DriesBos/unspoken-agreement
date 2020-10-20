@@ -1,5 +1,6 @@
 <template>
   <div v-editable="story.content" class="page-Slug">
+    <h1>INDEX SLUG</h1>
     <component
       :is="story.content.component | dashify"
       v-if="story.content.component"
@@ -29,13 +30,13 @@ export default {
   data() {
     return { story: { content: {} } }
   },
-  mounted() {
-    console.log("INDEX SLUG", this.story)
-  },
   head() {
     return {
       title: this.story.name + " — Unspoken Agreement"
     }
+  },
+  mounted() {
+    // console.log("INDEX SLUG", this.story)
   }
 }
 </script>
