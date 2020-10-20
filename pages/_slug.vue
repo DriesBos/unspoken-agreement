@@ -29,9 +29,12 @@ export default {
   data() {
     return { story: { content: {} } }
   },
+  mounted() {
+    console.log("INDEX SLUG", this.story)
+  },
   head() {
     return {
-      title: this.story.name + " — SITE TITLE"
+      title: this.story.name + " — Unspoken Agreement"
     }
   }
 }

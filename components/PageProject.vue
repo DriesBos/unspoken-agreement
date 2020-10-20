@@ -1,5 +1,6 @@
 <template>
   <div v-editable="blok" class="page-Post">
+    <h1>PAGE PROJECT</h1>
     <component
       :is="blok.component | dashify"
       v-for="blok in blok.body"
@@ -13,6 +14,9 @@
 export default {
   props: {
     blok: Object
+  },
+  mounted() {
+    console.log("PAGE PROJECT", this.blok)
   }
 }
 </script>

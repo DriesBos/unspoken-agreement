@@ -13,7 +13,7 @@
 export default {
   asyncData(context) {
     return context.app.$storyapi
-      .get("cdn/stories/blog/", {
+      .get("cdn/stories/projects/", {
         version: process.env.NODE_ENV == "production" ? "published" : "draft"
       })
       .then(res => {
@@ -31,9 +31,12 @@ export default {
       story: { content: {} }
     }
   },
+  mounted() {
+    console.log("PROJECT INDEX", this.story)
+  },
   head() {
     return {
-      title: this.story.name + " — SITE TITLE"
+      title: this.story.name + " — Unspoken Agreement"
     }
   }
 }

@@ -43,9 +43,12 @@ export default {
       story: { content: {} }
     }
   },
+  mounted() {
+    console.log("INDEX", this.story)
+  },
   head() {
     return {
-      title: this.story.name + " — SITE TITLE"
+      title: this.story.name + " — Unspoken Agreement"
     }
   }
 }

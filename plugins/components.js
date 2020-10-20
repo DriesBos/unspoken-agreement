@@ -2,20 +2,16 @@ import Vue from "vue"
 
 // PAGES
 import Page from "~/components/Page.vue"
-import PagePost from "~/components/PagePost.vue"
+import PageProject from "~/components/PageProject.vue"
 
 // ITEMS
-import ItemContactForm from "~/components/ItemContactForm.vue"
 import ItemImages from "~/components/ItemImages.vue"
-import ItemText from "~/components/ItemText.vue"
-import ItemVideoplayer from "~/components/ItemVideoplayer.vue"
+import ItemStep from "~/components/ItemStep.vue"
 
 // PAGES
 Vue.component("blok-page", Page)
-Vue.component("blok-page-post", PagePost)
+Vue.component("blok-page-project", PageProject)
 
 // ITEMS
-Vue.component("blok-item-contact-form", ItemContactForm)
 Vue.component("blok-item-images", ItemImages)
-Vue.component("blok-item-text", ItemText)
-Vue.component("blok-item-videoplayer", ItemVideoplayer)
+Vue.component("blok-item-step", ItemStep)

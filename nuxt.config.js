@@ -10,7 +10,7 @@ const axios = require("axios")
 
 module.exports = {
   head: {
-    title: "Inert Site Title", // Change in package.json files
+    title: "Unspoken Agreement", // Change in package.json files
     meta: [
       { charset: "utf-8" },
       {
