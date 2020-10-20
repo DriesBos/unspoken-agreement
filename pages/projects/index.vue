@@ -1,13 +1,10 @@
 <template>
-  <div v-editable="story.content" class="page-ProjectIndex">
-    <h1>PROJECT INDEX</h1>
-    <component
-      :is="story.content.component | dashify"
-      v-if="story.content.component"
-      :key="story.content._uid"
-      :blok="story.content"
-    ></component>
-  </div>
+  <component
+    :is="story.content.component | dashify"
+    v-if="story.content.component"
+    :key="story.content._uid"
+    :blok="story.content"
+  ></component>
 </template>
 
 <script>
