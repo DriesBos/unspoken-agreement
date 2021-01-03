@@ -1,24 +1,20 @@
-// @font-face
-//   font-family: ''
-//   src: url('~assets/fonts/') format('')
-//   font-weight: normal
-//   font-style: normal
+@font-face
+  font-family: 'Morion Bold'
+  src: url('~assets/fonts/MorionBold.woff') format('woff')
+  font-weight: normal
+  font-style: normal
 
-// @font-face
-//   font-family: ''
-//   src: url('~assets/fonts/') format('')
-//   font-weight: normal
-//   font-style: italic
-
-// @font-face
-//   font-family: ''
-//   src: url('~assets/fonts/') format('')
-//   font-weight: bold
-//   font-style: normal
+@font-face
+  font-family: 'NeueHaasGrotesk Regular'
+  src: url('~assets/fonts/NeueHaasGroteskRegular.woff') format('woff')
+  font-weight: normal
+  font-style: normal
 
 // https://www.madebymike.com.au/writing/fluid-type-calc-examples/
 html
+  font-family: 'NeueHaasGrotesk Regular', Helvetica, Arial, sans-serif
   font-size: 16px
+  line-height: 1.5
 
 @media screen and (min-width: 800px)
   html
@@ -41,7 +37,7 @@ h1, h2, h3, p, a
   hyphens: none
 
 li, h1, h2, h3, h4, h5, blockquote, p, a, a:link, a:visited, a:hover, a:active, span, input, button
-  font-family: Helvetica, Arial, sans-serif
+  font-family: 'NeueHaasGrotesk Regular', Helvetica, Arial, sans-serif
   line-height: 1.5
   color: currentColor
   font-style: normal

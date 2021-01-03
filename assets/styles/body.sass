@@ -19,19 +19,13 @@ img
   // border: 1px solid $color-support
   margin: 1rem
 
-header
-  position: relative
-  width: 100%
-  ul
-    display: flex
-    justify-content: flex-end
-    li
-      padding: 1em .5em
-      cursor: pointer
-    li:last-child
-      padding-right: 1em
-  .nuxt-link-exact-active
-    text-decoration: underline
+.logo, .logo span
+  font-family: $morion
+
+.page
+  margin-top: 8rem
+  @media screen and ( max-width: $breakpoint-mobile)
+    margin-top: 8rem
 
 // Aspect ratio CSS
 .aspectRatioOutside
@@ -64,13 +58,11 @@ header
 
 // Important since overriding interactions
 .desktop
-  display: none
   @media screen and ( max-width: $breakpoint-mobile)
     display: none !important
 .mobile
-  display: none
-  @media screen and ( max-width: $breakpoint-mobile)
-    display: block !important
+  @media screen and ( min-width: $breakpoint-mobile)
+    display: none !important
 .horizontal
   display: none
   @media screen and (orientation: landscape)
