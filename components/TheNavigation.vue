@@ -70,7 +70,7 @@ export default {
 
 <style lang="sass">
 .navigation
-  padding: var(--spacing-side-two)
+  padding: var(--spacing-side-one)
   overflow: visible
   @media screen and ( max-width: $breakpoint-mobile)
     color: currentColor

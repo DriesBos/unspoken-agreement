@@ -20,14 +20,20 @@ img
   margin: 1rem
 
 .button
+  display: inline-flex
+  align-items: center
   background: $white
-  border-radius: 1rem
-  padding: 0.5rem 1.5rem
+  border-radius: .66rem
+  padding: .5rem 1rem
   color: $black !important
   text-decoration: none
-  font-family: $morion !important
   transition: all .33s ease
   border: 1px solid white
+  display: inline
+  a
+    transform: translateY(1px)
+    font-family: $morion !important
+    text-decoration: none
   &:hover
     background: $black
     color: $white !important

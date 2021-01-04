@@ -10,6 +10,7 @@
   left: 0
   top: 0
   right: 0
-  z-index: $zindex-header
+  margin: var(--spacing-side-one)
   color: $black
+  z-index: $zindex-header
 </style>
