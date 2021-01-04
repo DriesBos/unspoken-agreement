@@ -1,6 +1,6 @@
 <template>
-  <div v-editable="blok" class="page page-Studio">
-    <p>PAGE STUDIO</p>
+  <div v-editable="blok" class="page page-Client">
+    <p>PAGE CLIENT</p>
     <component
       :is="blok.component | dashify"
       v-for="blok in blok.body"
@@ -16,7 +16,7 @@ export default {
     blok: Object
   },
   mounted() {
-    console.log("PAGE STUDIO", this.blok)
+    console.log("PAGE CLIENT", this.blok)
   }
 }
 </script>
