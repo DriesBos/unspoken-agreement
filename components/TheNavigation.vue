@@ -24,7 +24,8 @@
     </div>
     <div class="navigation-Main">
       <div class="navigation-Main_Menu">
-        <span @click="toggleNav">Menu</span><span>|</span><span>Welcome</span>
+        <span @click="toggleNav">Menu</span><span>|</span
+        ><span>{{ $route.name }}</span>
       </div>
       <div class="logo navigation-Main_Logo">
         <span>Unspoken </span><span>Agreement</span>
