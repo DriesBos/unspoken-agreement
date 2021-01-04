@@ -5,15 +5,80 @@
         <div class="studio-Color_Shape"></div>
       </div>
       <div class="studio-Location">Studio Colorado</div>
-      <div class="mobile studio-Time">2:33:06</div>
+      <div class="mobile studio-Time">{{ timeNow }}</div>
       <div class="mobile studio-Degrees">82<span>°</span></div>
     </div>
     <div class="desktop studio-Row">
-      <div class="studio-Time">2:33:06</div>
+      <div class="studio-Time">{{ timeNow }}</div>
       <div class="studio-Degrees">82<span>°</span></div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      timeNow: "00:00:00",
+      myText: 0,
+      studio: [
+        {
+          studio: "new york",
+          time: new Date("2017-01-03"),
+          temp: "f"
+        },
+        {
+          studio: "florida",
+          time: new Date("2017-01-03"),
+          temp: "f"
+        },
+        {
+          studio: "colorado",
+          time: new Date("2017-01-03"),
+          temp: "f"
+        },
+        {
+          studio: "amsterdam",
+          time: new Date("2017-01-03"),
+          temp: "c"
+        }
+      ]
+    }
+  },
+  created() {
+    setInterval(() => {
+      this.startTime()
+    }, 1000)
+  },
+  mounted() {
+    this.changeStudio()
+  },
+  methods: {
+    changeStudio() {
+      console.log("CHANGING STUDIO")``
+    },
+    startTime() {
+      var today = new Date()
+      var h = today.getHours()
+      var m = today.getMinutes()
+      var s = today.getSeconds()
+      this.timeNow =
+        this.timeFormatter(h) +
+        ":" +
+        this.timeFormatter(m) +
+        ":" +
+        this.timeFormatter(s)
+    },
+    timeFormatter(time) {
+      if (time < 10) {
+        return "0" + time
+      } else {
+        return time
+      }
+    }
+  }
+}
+</script>
 
 <style lang="sass">
 $ny: #619BF8
