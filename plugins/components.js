@@ -4,6 +4,7 @@ import Vue from "vue"
 import Page from "~/components/Page.vue"
 import PageClient from "~/components/PageClient.vue"
 import PageClientPortal from "~/components/PageClientPortal.vue"
+import PageContact from "~/components/PageContact.vue"
 import PageProject from "~/components/PageProject.vue"
 import PageProjects from "~/components/PageProjects.vue"
 import PageStudio from "~/components/PageStudio.vue"
@@ -16,6 +17,7 @@ import ItemStep from "~/components/ItemStep.vue"
 Vue.component("blok-page", Page)
 Vue.component("blok-page-client", PageClient)
 Vue.component("blok-page-client-portal", PageClientPortal)
+Vue.component("blok-page-contact", PageContact)
 Vue.component("blok-page-project", PageProject)
 Vue.component("blok-page-projects", PageProjects)
 Vue.component("blok-page-studio", PageStudio)
