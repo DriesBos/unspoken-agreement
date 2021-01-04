@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     changeStudio() {
-      console.log("CHANGING STUDIO")``
+      console.log("CHANGING STUDIO")
     },
     startTime() {
       var today = new Date()
