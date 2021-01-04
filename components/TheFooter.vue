@@ -1,49 +1,46 @@
 <template>
-  <footer>
-    <div class="row">
-      <ul>
-        <nuxt-link to="/" tag="li">Home</nuxt-link>
-        <nuxt-link to="/blog" tag="li">Blog</nuxt-link>
-        <nuxt-link to="/about" tag="li">About</nuxt-link>
-      </ul>
-      <ul>
-        <nuxt-link to="/privacy-policy" tag="li">Privacy Policy</nuxt-link>
-        <nuxt-link to="/terms-and-conditions" tag="li"
-          >Terms & Conditions</nuxt-link
+  <footer class="footer">
+    <div class="footer-Content">
+      <div class="footer-Content_Button">
+        <a
+          class="button"
+          href="mailto:hello@unspokenagreement.com"
+          target="_blank"
+          >Hire our team</a
         >
-      </ul>
-      <ul>
-        <li>
-          <a href="" target="_blank" rel="noreferrer">mail</a>
-        </li>
-        <li>
-          <a href="" target="_blank" rel="noreferrer">phone</a>
-        </li>
-        <li>
-          <a href="" target="_blank" rel="noreferrer">instagram</a>
-        </li>
-        <li>
-          <a
-            href="https://www.driesbos.com"
-            target="_blank"
-            title="Site by Dries Bos"
-            rel="noreferrer"
-          >
-            Site by: Dries Bos
-          </a>
-        </li>
-      </ul>
+      </div>
+      <div class="footer-Content_TextSwitch">
+        <p>Currently designing</p>
+        <p>
+          A branding suite and digital experience for a wellness brand in
+          Chicago.
+        </p>
+      </div>
     </div>
+    <TheNavigation class="footer-Nav" />
   </footer>
 </template>
 
 <style lang="sass">
-footer
+.footer
+  position: relative
+  z-index: $zindex-footer
+  background: $black
+  color: $white
   display: flex
   flex-direction: column
-  .row
+  margin: var(--spacing-side-one)
+  @media screen and ( max-width: $breakpoint-mobile)
+    flex-direction: column-reverse
+  &-Content
     display: flex
-    flex-wrap: nowrap
-    ul
-       padding: 1rem
+    padding: var(--spacing-side-two)
+    @media screen and ( max-width: $breakpoint-mobile)
+      flex-direction: column-reverse
+    &_Button
+      @media screen and ( min-width: $breakpoint-mobile)
+        width: var(--width-leftside)
+    &_TextSwitch
+      p:first-of-type
+        font-family: $morion
 </style>

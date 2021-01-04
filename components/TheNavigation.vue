@@ -1,37 +1,56 @@
 <template>
-  <header class="header">
-    <div class="mobile header-Mobile">
+  <div class="navigation">
+    <div class="mobile navigation-Mobile">
       <TheStudio />
     </div>
-    <div class="header-Main">
-      <div class="header-Main_Menu">
+    <div class="navigation-Nav navigation-Nav_Top" :class="{ active: nav }">
+      <ul class="navigation-Nav_List">
+        <nuxt-link class="navigation-Nav_ListItem" to="/studio" tag="li"
+          >Studio</nuxt-link
+        >
+        <nuxt-link class="navigation-Nav_ListItem" to="/projects" tag="li"
+          >Projects</nuxt-link
+        >
+        <nuxt-link class="navigation-Nav_ListItem" to="/contact" tag="li"
+          >Contact</nuxt-link
+        >
+        <nuxt-link class="navigation-Nav_ListItem" to="/client-portal" tag="li"
+          >Client Portal</nuxt-link
+        >
+      </ul>
+      <div class="navigation-Nav_Social">
+        <a href="https://www.instagram.com/unspoken.agreement/">Instagram</a>
+      </div>
+    </div>
+    <div class="navigation-Main">
+      <div class="navigation-Main_Menu">
         <span @click="toggleNav">Menu</span><span>|</span><span>Welcome</span>
       </div>
-      <div class="logo header-Main_Logo">
+      <div class="logo navigation-Main_Logo">
         <span>Unspoken </span><span>Agreement</span>
       </div>
       <TheStudio class="desktop" />
     </div>
-    <div class="header-Nav" :class="{ active: nav }">
-      <ul class="header-Nav_List">
-        <nuxt-link class="header-Nav_ListItem" to="/studio" tag="li"
+    <div class="navigation-Nav navigation-Nav_Bottom" :class="{ active: nav }">
+      <ul class="navigation-Nav_List">
+        <nuxt-link class="navigation-Nav_ListItem" to="/studio" tag="li"
           >Studio</nuxt-link
         >
-        <nuxt-link class="header-Nav_ListItem" to="/projects" tag="li"
+        <nuxt-link class="navigation-Nav_ListItem" to="/projects" tag="li"
           >Projects</nuxt-link
         >
-        <nuxt-link class="header-Nav_ListItem" to="/contact" tag="li"
+        <nuxt-link class="navigation-Nav_ListItem" to="/contact" tag="li"
           >Contact</nuxt-link
         >
-        <nuxt-link class="header-Nav_ListItem" to="/client-portal" tag="li"
+        <nuxt-link class="navigation-Nav_ListItem" to="/client-portal" tag="li"
           >Client Portal</nuxt-link
         >
       </ul>
-      <div class="header-Nav_Social">
+      <div class="navigation-Nav_Social">
         <a href="https://www.instagram.com/unspoken.agreement/">Instagram</a>
       </div>
     </div>
-  </header>
+  </div>
 </template>
 
 <script>
@@ -50,17 +69,11 @@ export default {
 </script>
 
 <style lang="sass">
-.header
-  position: fixed
-  left: 0
-  top: 0
-  right: 0
-  z-index: $zindex-header
+.navigation
   padding: var(--spacing-side-two)
   overflow: visible
   @media screen and ( max-width: $breakpoint-mobile)
-    background: $white
-    color: $black
+    color: currentColor
     padding: var(--spacing-side-one)
   a, a:hover
     text-decoration: none
@@ -80,7 +93,7 @@ export default {
       flex-shrink: 0
     &_Menu
       @media screen and ( min-width: $breakpoint-mobile)
-        flex-grow: 2
+        width: var(--width-leftside)
       > span:first-of-type
         text-transform: uppercase
         margin-right: .5rem
@@ -122,4 +135,17 @@ export default {
     &_Social a
       font-family: $morion
       cursor: pointer
+
+.header
+  .navigation-Nav_Top, .navigation-Nav_Top.active
+    display: none
+
+.footer
+  .navigation-Nav_Bottom, .navigation-Nav_Bottom.active
+    display: none
+  @media screen and ( max-width: $breakpoint-mobile)
+    .navigation-Mobile
+      display: none
+    .navigation-Main
+      border-top: $border
 </style>

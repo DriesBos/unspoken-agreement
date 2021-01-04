@@ -1,7 +1,7 @@
 <template>
   <!-- Change if needed -->
   <main lang="en-US" translate="no">
-    <LazyTheNavigation />
+    <LazyTheHeader />
     <transition name="pages" mode="out-in">
       <nuxt />
     </transition>
