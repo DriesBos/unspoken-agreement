@@ -27,9 +27,9 @@
         <span @click="toggleNav">Menu</span><span>|</span
         ><span>{{ $route.name }}</span>
       </div>
-      <div class="logo navigation-Main_Logo">
+      <nuxt-link to="/" class="logo navigation-Main_Logo" tag="div">
         <span>Unspoken </span><span>Agreement</span>
-      </div>
+      </nuxt-link>
       <TheStudio class="desktop" />
     </div>
     <div class="navigation-Nav navigation-Nav_Bottom" :class="{ active: nav }">
