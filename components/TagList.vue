@@ -1,9 +1,11 @@
 <template>
-  <ul ref="component" class="tagList" r>
-    <li v-for="(tag, i) in tagList" ref="tags" :key="i" class="tagList-Item">
-      <h2>{{ tag | upperCase }}</h2>
-    </li>
-  </ul>
+  <div class="tagList">
+    <ul ref="component" class="tagList-Container">
+      <li v-for="(tag, i) in tagList" ref="tags" :key="i" class="tagList-Item">
+        <h2>{{ tag | upperCase }}</h2>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -21,7 +23,7 @@ export default {
   },
   mounted() {
     this.sortTagList()
-    // this.tagListAnimation()
+    this.tagListAnimation()
   },
   methods: {
     updateCounter(number) {
@@ -31,15 +33,21 @@ export default {
     tagListAnimation() {
       var target = this.$refs.component
       // var repeat = tl.repeat() || 0
-      var tl = gsap.timeline().to(target, {
-        y: -(1 * 10),
-        ease: "power2.out",
-        duration: 1,
-        delay: 1,
-        repeat: -1
+      var tl = gsap.timeline({})
+      tl.to(target, {
+        yPercent: -100,
+        ease: "linear",
+        duration: 66
       })
-      tl.play()
-      console.log(tl.repeat)
+      tl.pause()
+      target.closest(".thumbnail").addEventListener("mouseover", () => {
+        tl.play()
+      })
+      target.closest(".thumbnail").addEventListener("mouseout", () => {
+        tl.restart()
+        tl.pause()
+      })
+      console.log(target)
     },
     sortTagList() {
       var array = [
@@ -69,7 +77,13 @@ export default {
   flex-direction: column
   align-items: center
   overflow: hidden
+  &-Container
+    overflow-y: auto
+    overflow: visible
+    h2
+      text-align: center !important
   > li
+    overflow: visible
     &:first-child
       margin-top: -.6em
 </style>

@@ -134,7 +134,7 @@ export default {
     border: 1px solid white
     transition: opacity $trans-thumbnail
     &_TagList
-      height: 5.7em
+      height: 4.3em
     &_Title
       position: absolute
       display: flex
