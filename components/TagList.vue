@@ -32,7 +32,6 @@ export default {
     },
     tagListAnimation() {
       var target = this.$refs.component
-      // var repeat = tl.repeat() || 0
       var tl = gsap.timeline({})
       tl.to(target, {
         yPercent: -100,
