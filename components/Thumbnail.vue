@@ -117,6 +117,7 @@ export default {
     width: 100%
     height: 100%
     opacity: 1
+    transition: opacity $trans-thumbnail
     &_Title
       span
         &:first-child
@@ -134,12 +135,12 @@ export default {
     right: .5rem
     bottom: .5rem
     border: 1px solid white
+    transition: opacity $trans-thumbnail
     &_TagList
       display: flex
       flex-wrap: nowrap !important
       flex-direction: column !important
       align-items: center
-      justify-content: flex-start
     &_Title
       position: absolute
       display: flex

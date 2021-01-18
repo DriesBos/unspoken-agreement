@@ -50,11 +50,11 @@ img
 
 .images
   &-Container
-    ul
+    > ul
       display: flex
       flex-direction: row
       gap: var(--spacing-one)
-      li
+      > li
         position: relative
         cursor: pointer
         color: white
@@ -66,9 +66,9 @@ img
             .thumbnail-OverlayActive
               opacity: 1
     &_Landing
-      ul
+      > ul
         flex-wrap: wrap
-        li
+        > li
           flex-basis: calc(50% - (#{var(--spacing-one)} * .5))
           &:first-child
             flex-basis: 100%
@@ -78,18 +78,18 @@ img
           &:nth-child(n+4)
             display: none
     &_Slider
-      ul
+      > ul
         flex-wrap: nowrap
         overflow-x: auto
         height: 500px
         width: 100vw
-        li
+        > li
           width: calc(35% - (#{var(--spacing-one)} * .5))
           flex-shrink: 0
     &_Projects
-      ul
+      > ul
         flex-wrap: wrap
-        li
+        > li
           flex-basis: calc(50% - (#{var(--spacing-one)} * .5))
           &:nth-child(5n+3), &:nth-child(5n+4), &:nth-child(5n+5)
             flex-basis: calc(33.3333% - (#{var(--spacing-one)} * .66666))
