@@ -141,6 +141,8 @@ export default {
       flex-wrap: nowrap !important
       flex-direction: column !important
       align-items: center
+      height: 5.7em
+      overflow: hidden
     &_Title
       position: absolute
       display: flex
