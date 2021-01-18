@@ -52,7 +52,6 @@ export default {
   },
   mounted() {
     this.sortProjectsLanding()
-    console.log(this.projectListLanding)
   },
   methods: {
     sortProjectsLanding() {

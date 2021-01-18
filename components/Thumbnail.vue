@@ -52,8 +52,11 @@
           </h2>
         </div>
       </div>
-
       <div class="thumbnail-OverlayActive">
+        <TagList
+          class="thumbnail-OverlayActive_TagList"
+          :list="image.content.tag_list"
+        />
         <div
           class="thumbnail-OverlayActive_Title thumbnail-OverlayActive_TitleTop"
         >
@@ -64,11 +67,7 @@
             {{ image.content.content.location }}
           </h2>
         </div>
-        <ul class="thumbnail-OverlayActive_TagList">
-          <li v-for="(tag, i) in image.content.tag_list" :key="i">
-            <h2>{{ tag | upperCase }}</h2>
-          </li>
-        </ul>
+
         <div
           class="thumbnail-OverlayActive_Title thumbnail-OverlayActive_TitleBottom"
         >
@@ -89,9 +88,7 @@ export default {
     image: Object,
     ratio: String
   },
-  mounted() {
-    console.log("RATIO", this.ratio)
-  },
+  mounted() {},
   methods: {
     transformImage(image, option) {
       if (!image) return ""
@@ -137,12 +134,7 @@ export default {
     border: 1px solid white
     transition: opacity $trans-thumbnail
     &_TagList
-      display: flex
-      flex-wrap: nowrap !important
-      flex-direction: column !important
-      align-items: center
       height: 5.7em
-      overflow: hidden
     &_Title
       position: absolute
       display: flex
