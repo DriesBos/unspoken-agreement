@@ -1,3 +1,14 @@
+$sans-serif: 'NeueHaasGrotesk Regular', Helvetica, Arial, sans-serif
+$serif: 'Morion Bold'
+$lineheight: 1.5rem
+$type-size-p: 1rem
+$type-size-h1: 2rem
+$type-size-h2: 3rem
+$type-size-h3: 4rem
+$type-size-h4: 5rem
+$type-size-h5: 6rem
+$type-size-blockquote: 6rem
+
 @font-face
   font-family: 'Morion Bold'
   src: url('~assets/fonts/MorionBold.woff') format('woff')
@@ -13,16 +24,16 @@
 // https://www.madebymike.com.au/writing/fluid-type-calc-examples/
 html
   font-family: 'NeueHaasGrotesk Regular', Helvetica, Arial, sans-serif
-  font-size: 16px
+  font-size: 18px
   line-height: 1.5
 
 @media screen and (min-width: 800px)
   html
-    font-size: calc(16px + 6 * ((100vw - 800px) / 1200))
+    font-size: calc(16px + 4 * ((100vw - 800px) / 1200))
 
 @media screen and (min-width: 2000px)
   html
-    font-size: 22px
+    font-size: 20px
 
 h1, h2, h3, p, a
   word-wrap: break-word
@@ -71,6 +82,21 @@ li, h1, h2, h3, h4, h5, blockquote, p, a, a:link, a:visited, a:hover, a:active, 
     margin-bottom: $lineheight
   p
     min-height: $lineheight
+
+.thumbnail
+  &-Title
+    letter-spacing: .02em
+    font-size: 1.6667rem
+  &-Location
+    font-family: $serif
+    font-size: 1.6667rem
+  &-OverlayActive
+    h2
+      font-size: 1.1111rem
+    &_TagList
+      h2
+        letter-spacing: .02em
+        line-height: .4 !important
 
 .ellipsis // Limit title to one line
   overflow: hidden

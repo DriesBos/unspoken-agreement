@@ -43,25 +43,30 @@
       <div class="thumbnail-Overlay">
         <div class="thumbnail-Overlay_Title">
           <h2>
-            {{ image.content.content.title | upperCase }} |
-            {{ image.content.content.location }}
+            <span class="thumbnail-Title">{{
+              image.content.content.title | upperCase
+            }}</span
+            >|<span class="thumbnail-Location">{{
+              image.content.content.location
+            }}</span>
           </h2>
         </div>
       </div>
+
       <div class="thumbnail-OverlayActive">
         <div
           class="thumbnail-OverlayActive_Title thumbnail-OverlayActive_TitleTop"
         >
-          <h2>{{ image.content.content.title | upperCase }}</h2>
+          <h2>
+            {{ image.content.content.title | upperCase }}
+          </h2>
           <h2>
             {{ image.content.content.location }}
           </h2>
         </div>
         <ul class="thumbnail-OverlayActive_TagList">
           <li v-for="(tag, i) in image.content.tag_list" :key="i">
-            <h2>
-              <h2>{{ tag | upperCase }}</h2>
-            </h2>
+            <h2>{{ tag | upperCase }}</h2>
           </li>
         </ul>
         <div
@@ -112,32 +117,40 @@ export default {
     width: 100%
     height: 100%
     opacity: 1
+    &_Title
+      span
+        &:first-child
+          margin-right: .66rem
+        &:last-child
+          margin-left: .66rem
   &-OverlayActive
     opacity: 0
     position: absolute
     display: flex
     justify-content: center
     align-items: center
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
+    top: .5rem
+    left: .5rem
+    right: .5rem
+    bottom: .5rem
+    border: 1px solid white
     &_TagList
       display: flex
-      flex-direction: column
+      flex-wrap: nowrap !important
+      flex-direction: column !important
       align-items: center
+      justify-content: flex-start
     &_Title
       position: absolute
       display: flex
       flex-direction: column
       align-items: center
-      margin: var(--spacing-four) 0
       left: 50%
       transform: translateX(-50%)
       text-align: center
     &_TitleTop
-      top: 0
+      top: 5%
     &_TitleBottom
-      bottom: 0
+      bottom: 5%
       transform: translateX(-50%) rotate(180deg)
 </style>
