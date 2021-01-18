@@ -1,84 +1,15 @@
 <template>
   <div v-editable="blok" class="page page-Projects">
-    <ul class="page-Projects_Images">
-      <nuxt-link
-        v-for="(project, i) in projectList"
-        :key="i"
-        :to="project.content.full_slug"
-        tag="li"
-        class="page-Projects_ImageSingle"
-      >
-        <div class="aspectRatioOutside square cover">
-          <div class="aspectRatioInside">
-            <img
-              v-lazy="
-                `${transformImage(
-                  project.content.content.thumbnail.filename,
-                  '1440x0'
-                )}`
-              "
-              :data-srcset="
-                `${transformImage(
-                  project.content.content.thumbnail.filename,
-                  '400x0'
-                )} 400w, 
-                 ${transformImage(
-                   project.content.content.thumbnail.filename,
-                   '800x0'
-                 )} 800w, 
-                 ${transformImage(
-                   project.content.content.thumbnail.filename,
-                   '1200x0'
-                 )} 1200w,
-                 ${transformImage(
-                   project.content.content.thumbnail.filename,
-                   '1600x0'
-                 )} 1600w,
-                 ${transformImage(
-                   project.content.content.thumbnail.filename,
-                   '2000x0'
-                 )} 2000w`
-              "
-              class="lazy"
-              :alt="project.content.content.thumbnail.name"
-            />
-          </div>
-          <div class="page-Projects_Overlay">
-            <div class="page-Projects_Overlay_Title">
-              <h2>
-                {{ project.content.content.title | upperCase }} |
-                {{ project.content.content.location }}
-              </h2>
-            </div>
-          </div>
-          <div class="page-Projects_OverlayActive">
-            <div
-              class="page-Projects_OverlayActive_Title page-Projects_OverlayActive_TitleTop"
-            >
-              <h2>{{ project.content.content.title | upperCase }}</h2>
-              <h2>
-                {{ project.content.content.location }}
-              </h2>
-            </div>
-            <ul class="page-Projects_OverlayActive_TagList">
-              <li v-for="(tag, index) in project.content.tag_list" :key="index">
-                <h2>
-                  <h2>{{ tag | upperCase }}</h2>
-                </h2>
-              </li>
-            </ul>
-            <div
-              class="page-Projects_OverlayActive_Title page-Projects_OverlayActive_TitleBottom"
-            >
-              <h2>{{ project.content.content.title | upperCase }}</h2>
-              <h2>
-                {{ project.content.content.location }}
-              </h2>
-            </div>
-          </div>
-        </div>
-      </nuxt-link>
-    </ul>
+    <section class="images-Container images-Container_Projects">
+      <ul>
+        <LazyThumbnail
+          v-for="(image, i) in projectList"
+          :key="i"
+          :image="image"
+          ratio="square"
+        />
+      </ul>
+    </section>
   </div>
 </template>
 
@@ -100,12 +31,12 @@ export default {
     })
   },
   mounted() {
-    this.removeFirstOfArray()
-    console.log("PAGE PROJECTS", this.blok)
-    console.log("VUEX PROJECTS LIST", this.projectList)
+    this.sortProjects()
+    // console.log("PAGE PROJECTS", this.blok)
+    // console.log("VUEX PROJECTS LIST", this.projectList)
   },
   methods: {
-    removeFirstOfArray() {
+    sortProjects() {
       this.projectList = this.projects.slice(1)
     },
     transformImage(image, option) {
@@ -121,26 +52,7 @@ export default {
 </script>
 
 <style lang="sass">
-.page-Projects
-  &_Images
-    display: flex
-    flex-wrap: wrap
-    gap: var(--spacing-one)
-  &_ImageSingle
-    position: relative
-    flex-basis: calc(50% - (#{var(--spacing-one)} * .5))
-    cursor: pointer
-    color: white
-    &:hover
-      @media (hover: hover)
-        .page-Projects_Overlay
-          opacity: 0
-        .page-Projects_OverlayActive
-          opacity: 1
-
-  &_ImageSingle
-    &:nth-child(5n+3), &:nth-child(5n+4), &:nth-child(5n+5)
-      flex-basis: calc(33.3333% - (#{var(--spacing-one)} * .66666))
+.thumbnail
   &_Overlay
     position: absolute
     display: flex

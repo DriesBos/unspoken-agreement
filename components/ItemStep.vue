@@ -11,7 +11,7 @@ export default {
     blok: Object
   },
   mounted() {
-    console.log("ITEM STEP", this.blok)
+    // console.log("ITEM STEP", this.blok)
   }
 }
 </script>

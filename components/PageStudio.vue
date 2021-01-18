@@ -30,12 +30,12 @@ export default {
   },
   mounted() {
     this.sortProjects()
-    console.log("PAGE STUDIO", this.blok)
-    console.log("VUEX PROJECTS LIST", this.projectList)
+    // console.log("PAGE STUDIO", this.blok)
+    // console.log("VUEX PROJECTS LIST", this.projectList)
   },
   methods: {
     sortProjects() {
-      console.log(this.projects)
+      // console.log(this.projects)
     },
     transformImage(image, option) {
       if (!image) return ""
